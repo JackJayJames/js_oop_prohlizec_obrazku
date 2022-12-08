@@ -13,8 +13,16 @@ class Prohlizec{
     _onclickObrazky(){
         for(const obrazek of this._obrazky){
             obrazek.onclick = () => {
-                console.log(obrazek.alt);
+                this._odebratAktivni();
+                obrazek.classList.add("aktivni");
             };
         }
+    }
+    _odebratAktivni(){
+        this._obrazky.forEach(obrazek => {
+            obrazek.classList.forEach(trida => {
+                if(trida === "aktivni") obrazek.classList.remove("aktivni");
+            });
+        });
     }
 }

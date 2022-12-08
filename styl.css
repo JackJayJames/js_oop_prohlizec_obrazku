@@ -6,3 +6,6 @@
 .obrazky {
     width: 35%;
 }
+.aktivni{
+    border: 5px solid red;
+}
