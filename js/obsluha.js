@@ -1,3 +1,3 @@
 'use strict';
 
-const prohlizec = new Prohlizec();
+const prohlizec = new ProhlizecObrazku();

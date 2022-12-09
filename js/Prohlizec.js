@@ -1,6 +1,6 @@
 'use strict';
 
-class Prohlizec{
+class ProhlizecObrazku{
     constructor(){
         this._obrazky = document.querySelectorAll(".obrazky");
 
