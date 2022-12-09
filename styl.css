@@ -20,4 +20,23 @@
 }
 .akt-img {
     height: inherit;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+.ovl-tl {
+    border: 1px solid black;
+    width: 35px;
+    height: 35px;
+    font-size: 100%;
+    border-radius: 50%;
+    background: white;
+}
+.ovl-tl:hover{
+    transition: .2s;
+    background: lightgray;
+}
+.ovl-tl:active{
+    transition: .1s;
+    background: black;
+    color: white;
 }

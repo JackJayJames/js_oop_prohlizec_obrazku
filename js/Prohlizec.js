@@ -46,9 +46,9 @@ class Prohlizec{
     }
     vytvoritImgContainer(img){
         const div = document.createElement("div");
-        img.classList = "akt-img";
+        img.className = "akt-img";
         div.appendChild(img);
-
+        
         return div;
     }
 }
