@@ -15,7 +15,7 @@ class Prohlizec{
             obrazek.onclick = () => {
                 /*this._odebratAktivni();
                 obrazek.classList.add("aktivni");*/
-                this.vlozitZobrazContainer();
+                this.vlozitZobrazContainer(obrazek);
             };
         }
     }
@@ -26,15 +26,20 @@ class Prohlizec{
             });
         });
     }
-    vlozitZobrazContainer(){
+    vlozitZobrazContainer(obrazek){
         const container = this.vytvoritZobrazContainer();
-
+        container.appendChild(this.vytvoritTlacitko("<"));
         document.body.appendChild(container);
     }
     vytvoritZobrazContainer(){
         const div = document.createElement("div");
         div.className = "aktivni";
-
         return div;
+    }
+    vytvoritTlacitko(symbol){
+        const tlacitko = document.createElement("button");
+        tlacitko.className = "ovl-tl";
+        tlacitko.innerText = symbol;
+        return tlacitko;
     }
 }
