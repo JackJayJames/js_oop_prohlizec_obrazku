@@ -20,6 +20,8 @@
 }
 .akt-img {
     height: inherit;
+    max-height: 600px;
+    max-width: 900px;
     box-sizing: border-box;
     border: 1px solid black;
 }
