@@ -27,6 +27,7 @@ class Prohlizec{
         });
     }
     vlozitZobrazContainer(obrazek){
+        if(document.querySelector(".aktivni")) document.body.removeChild(document.querySelector(".aktivni"));
         const container = this.vytvoritZobrazContainer();
         container.appendChild(this.vytvoritTlacitko("<"));
         container.appendChild(this.vytvoritImgContainer(obrazek));
@@ -42,13 +43,15 @@ class Prohlizec{
         const tlacitko = document.createElement("button");
         tlacitko.className = "ovl-tl";
         tlacitko.innerText = symbol;
+        tlacitko.onclick = () => {
+            //document.body.removeChild(document.querySelector(".aktivni"));
+        };
         return tlacitko;
     }
     vytvoritImgContainer(img){
         const div = document.createElement("div");
         img.className = "akt-img";
         div.appendChild(img);
-        
         return div;
     }
 }
