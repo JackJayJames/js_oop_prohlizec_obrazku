@@ -4,6 +4,7 @@ class Prohlizec{
     constructor(){
         this._obrazky = document.querySelectorAll(".obrazky");
 
+        this.aktivniImg;
         this._onclickObrazky();
         this.vypis();
     }
@@ -13,9 +14,8 @@ class Prohlizec{
     _onclickObrazky(){
         for(const obrazek of this._obrazky){
             obrazek.onclick = () => {
-                /*this._odebratAktivni();
-                obrazek.classList.add("aktivni");*/
-                this.vlozitZobrazContainer(obrazek.cloneNode(true));
+                this.aktivniImg = obrazek;
+                this.vlozitZobrazContainer();
             };
         }
     }
@@ -26,11 +26,12 @@ class Prohlizec{
             });
         });
     }
-    vlozitZobrazContainer(obrazek){
+    vlozitZobrazContainer(){
         if(document.querySelector(".aktivni")) document.body.removeChild(document.querySelector(".aktivni"));
+
         const container = this.vytvoritZobrazContainer();
         container.appendChild(this.vytvoritTlacitko("<"));
-        container.appendChild(this.vytvoritImgContainer(obrazek));
+        container.appendChild(this.vytvoritImgContainer(this.aktivniImg.cloneNode(true)));
         container.appendChild(this.vytvoritTlacitko(">"));
         document.body.appendChild(container);
     }
@@ -44,7 +45,7 @@ class Prohlizec{
         tlacitko.className = "ovl-tl";
         tlacitko.innerText = symbol;
         tlacitko.onclick = () => {
-            //document.body.removeChild(document.querySelector(".aktivni"));
+            this.posunObrazku(tlacitko.innerText);
         };
         return tlacitko;
     }
@@ -53,5 +54,19 @@ class Prohlizec{
         img.className = "akt-img";
         div.appendChild(img);
         return div;
+    }
+    posunObrazku(symbol){
+        const arrImg = Array.prototype.slice.call(this._obrazky);
+        const imgIndex = arrImg.indexOf(this.aktivniImg);
+        if(symbol === "<") {
+            if(imgIndex === 0){
+                this.aktivniImg = this._obrazky[this._obrazky.length-1];
+            }
+            else{
+                this.aktivniImg = this._obrazky[imgIndex-1];
+            }
+        }
+        console.log(this.aktivniImg);
+        this.vlozitZobrazContainer();
     }
 }
