@@ -22,12 +22,12 @@ class ProhlizecObrazku{
     _odebratAktivni(){
         this._obrazky.forEach(obrazek => {
             obrazek.classList.forEach(trida => {
-                if(trida === "aktivni") obrazek.classList.remove("aktivni");
+                if(trida === "phrObr-aktivni") obrazek.classList.remove("phrObr-aktivni");
             });
         });
     }
     vlozitZobrazContainer(){
-        if(document.querySelector(".aktivni")) document.body.removeChild(document.querySelector(".aktivni"));
+        if(document.querySelector(".phrObr-aktivni")) document.body.removeChild(document.querySelector(".phrObr-aktivni"));
 
         const container = this.vytvoritZobrazContainer();
         container.appendChild(this.vytvoritTlacitko("<"));
@@ -37,7 +37,7 @@ class ProhlizecObrazku{
     }
     vytvoritZobrazContainer(){
         const div = document.createElement("div");
-        div.className = "aktivni";
+        div.className = "phrObr-aktivni";
         return div;
     }
     vytvoritTlacitko(symbol){

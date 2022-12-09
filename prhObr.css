@@ -6,7 +6,7 @@
 .obrazky {
     width: 35%;
 }
-.aktivni{
+.phrObr-aktivni{
     position: absolute;
     /*width: 60%;*/
     min-width: 60%;
