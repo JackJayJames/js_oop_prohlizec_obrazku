@@ -66,7 +66,14 @@ class Prohlizec{
                 this.aktivniImg = this._obrazky[imgIndex-1];
             }
         }
-        console.log(this.aktivniImg);
+        if(symbol === ">"){
+            if(imgIndex === this._obrazky.length-1){
+                this.aktivniImg = this._obrazky[0];
+            }
+            else{
+                this.aktivniImg = this._obrazky[imgIndex+1];
+            }
+        }
         this.vlozitZobrazContainer();
     }
 }
