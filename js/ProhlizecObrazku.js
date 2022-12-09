@@ -2,7 +2,7 @@
 
 class ProhlizecObrazku{
     constructor(){
-        this._obrazky = document.querySelectorAll(".obrazky");
+        this._obrazky = document.querySelectorAll(".phrObr-img");
 
         this.aktivniImg;
         this._onclickObrazky();
