@@ -13,8 +13,9 @@ class Prohlizec{
     _onclickObrazky(){
         for(const obrazek of this._obrazky){
             obrazek.onclick = () => {
-                this._odebratAktivni();
-                obrazek.classList.add("aktivni");
+                /*this._odebratAktivni();
+                obrazek.classList.add("aktivni");*/
+                this.vlozitZobrazContainer();
             };
         }
     }
@@ -24,5 +25,16 @@ class Prohlizec{
                 if(trida === "aktivni") obrazek.classList.remove("aktivni");
             });
         });
+    }
+    vlozitZobrazContainer(){
+        const container = this.vytvoritZobrazContainer();
+
+        document.body.appendChild(container);
+    }
+    vytvoritZobrazContainer(){
+        const div = document.createElement("div");
+        div.className = "aktivni";
+
+        return div;
     }
 }

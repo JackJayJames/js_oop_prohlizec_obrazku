@@ -8,5 +8,14 @@
 }
 .aktivni{
     position: absolute;
-    width: 60%;
+    /*width: 60%;*/
+    min-width: 60%;
+    min-height: 300px;
+    z-index: 10;
+    top: 30px;
+    left: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
 }
